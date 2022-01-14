@@ -1,1 +1,8 @@
-{}
+{
+    "tasks": [
+        "filas",
+        "torre",
+        "buses",
+        "camino"
+    ]
+}
