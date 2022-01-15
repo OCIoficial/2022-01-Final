@@ -159,9 +159,14 @@
   Similarmente, la tercera línea contiene $N$ enteros describiendo si las calles en dirección
   vertical contienen veredas.
 
+  La siguiente línea contiene 3 enteros $X$, $Y$ y $F$.
+  El par $(X, Y)$ describe la intersección inicial.
+  El entero $F$ describe la cantidad máxima de cuadras.
+  La intersección $(X, Y)$ no necesariamente estará contenida en una calle con vereda.
+
   A continuación sigue una línea con un entero $E$ ($0 < E \leq 1000$) correspondiente a la cantidad
   de puntos de interés.
-  Las siguientes $E$ líneas describen cada una la cuadra en que se encuentra cada punto de interés.
+  Las siguientes $E$ líneas describen cada una la cuadra en que se encuentra ubicado un punto de interés.
   Cada línea contiene tres enteros $a$, $b$, $c$.
   El par $(a, b)$ representa la intersección de inicio de la cuadra.
   Si el entero $c$ es 0, la cuadra está en dirección horizontal, es decir la cuadra está contenida entre las
@@ -169,11 +174,6 @@
   Si $c$ es 1, la cuadra está orientada en dirección vertical, es decir, la cuadra está contendida entre
   las intersecciones $(a, b)$ y $(a + 1, b)$.
   Se garantiza que la cuadra siempre estará contenida en la grilla.
-
-  Finalmente, la última línea contiene 3 enteros $X$, $Y$ y $F$.
-  El par $(X, Y)$ describe la intersección inicial.
-  El entero $F$ describe la cantidad máxima de cuadras.
-  La intersección $(X, Y)$ no necesariamente estará contenida en una calle con vereda.
 \end{inputDescription}
 
 \begin{outputDescription}
@@ -183,17 +183,16 @@
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \subtask{20}
-  Descripción Subtarea1
   \subtask{30}
-  Descripción Subtarea2
-  \subtask{50}
-  Descripción Subtarea3
+  Se probarán varios casos donde todas las calles tienen vereda, es decir, la segunda y tercera
+  línea de la entrada contendrán solo unos.
+  \subtask{70}
+  Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
 \sampleIO{sample-1}
-\sampleIO{sample-2}
+% \sampleIO{sample-2}
 \end{sampleDescription}
 
 \end{document}
