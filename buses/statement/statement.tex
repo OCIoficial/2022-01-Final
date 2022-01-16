@@ -17,7 +17,7 @@
 \begin{document}
 \begin{problemDescription}
   Décadas de malas políticas de desarrollo han condenado a los habitantes de Grilland a depender
-  de automóviles particulares para poder desplazarse por la ciudad.
+  del automóvil para poder desplazarse por la ciudad.
   Dado el indiscutible impacto negativo que esto tiene en el medio ambiente, los habitantes de
   Grilland han decidido poner un alto a la dependencia al automóvil.
   Los expertos saben que la mejor forma de lograrlo es hacer que la ciudad sea más
@@ -71,16 +71,15 @@
   Dada una intersección inicial estamos interesados en calcular el \emph{nivel de acceso} para
   esa intersección.
   El nivel de acceso corresponde a la cantidad de puntos de interés que pueden ser accedidos
-  desde la intersección inicial caminando no más de $F$ cuadras, es decir, la cantidad de puntos de
-  interés a una distancia menor o igual que $F$ cuadras.
-  Esto parece una tarea sencilla, pero algunas de las calles en Grilland no tienen una vereda por la
-  cual caminar.
+  desde la intersección inicial caminando no más de $F$ cuadras.
+  Esto parece una tarea sencilla, pero hay que considerar que {\bf solo algunas de las calles en Grilland
+  tienen una vereda por la cual es posible caminar}.
 
   La siguiente imagen muestra un ejemplo donde las calles con vereda han sido marcadas de color
   {\bf\color{blue}azul}, los puntos de interés están representados con pequeños cuadrados blancos
   y la intersección inicial con un círculo {\bf\color{red}rojo}.
-  El área marcada con \colorbox{lightgray}{gris} muestra todas las cuadras a una distancia
-  menor o igual que $F=3$.
+  El área marcada con \colorbox{lightgray}{gris} muestra todas las cuadras que es posible acceder
+  caminando a lo más $F=3$ cuadras.
   Hay 5 puntos de interés en esta área y por lo tanto el nivel de acceso para la intersección
   inicial es 5.
   Notar que no importa donde están ubicados exactamente los puntos de interés sino solo la cuadra
@@ -144,13 +143,13 @@
   }
   \end{center}
 
-  Dada la descripción de la geometría de Grilland, qué calles tienen vereda, las cuadras en las que
+  Dada la descripción de la geometría de Grilland, las calles que tienen vereda, las cuadras en las que
   están ubicados los puntos de interés y la intersección inicial, tu tarea es calcular el nivel de
   acceso para la intersección inicial.
 \end{problemDescription}
 
 \begin{inputDescription}
-  La primera línea de la entrada contiene cuatro enteros $M$ y $N$ ($0 < M \leq 100$ y $0 < N\leq 100$)
+  La primera línea de la entrada contiene dos enteros $M$ y $N$ ($0 < M \leq 100$ y $0 < N\leq 100$)
   correspondientes respectivamente a la cantidad de calles en dirección horizontal y la cantidad de
   calles en dirección vertical.
   La segunda línea contiene $M$ enteros describiendo si las calles en dirección horizontal
