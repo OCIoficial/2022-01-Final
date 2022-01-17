@@ -1,29 +1,158 @@
 \documentclass{oci}
 \usepackage[utf8]{inputenc}
-\usepackage{lipsum}
+\usepackage{tikz}
 
-\title{Ejemplo}
+\definecolor{blue}{RGB}{30, 136, 229}
+\definecolor{yellow}{RGB}{255, 193, 7}
+\definecolor{red}{RGB}{216, 27, 96}
+\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
+
+\newcommand{\swordred}{\hspace{0.1em}\raisebox{-0.2em}{\includegraphics[scale=0.5]{sword-red}}}
+\newcommand{\swordblue}{\raisebox{-0.2em}{\includegraphics[scale=0.5]{sword-blue}}}
+
+\title{La torre de la maldad}
 
 \begin{document}
 \begin{problemDescription}
+  Como prueba final de su valentía, Valeria ha sido encomendada con la misión de infiltrarse en la
+  torre de la maldad y poner fin al reinado de la liga del mal.
 
+  La torre de la maldad tiene $N$ niveles numerados de 1 a $N$.
+  En cada nivel hay un enemigo con poder $P_i$.
+  Para que la misión sea satisfactoria, Valeria debe derrotar a todos los enemigos.
+  El poder inicial de Valeria es $V$.
+  Valeria solo puede derrotar a un enemigo si su poder $V$ es mayor o igual que el poder $P_i$
+  del enemigo.
+  Después de derrotar a un enemigo, este es eliminado de la torre y el nivel queda \emph{vacío}.
+  Si en cualquier momento se enfrenta a un enemigo con un poder mayor que el de ella, Valeria perderá
+  la misión.
+  Afortunadamente, gracias a la gema de la experiencia, cada vez que Valeria derrota a un enemigo
+  su poder aumenta en 1.
+
+  Al comenzar la misión, Valeria puede infiltrarse en cualquier nivel de la torre y
+  enfrentarse con el enemigo en aquel nivel.
+  Una vez adentro, solo puedo moverse al siguiente nivel no vacío ya sea hacia arriba o hacia abajo.
+  Nuestra heroína está interesada en saber en qué orden visitar los niveles y enfrentarse a los enemigos
+  para que su misión sea exitosa.
+
+  La siguiente imagen muestra un ejemplo para una torre con $N=5$ niveles.
+  El poder inicial de Valeria es $12$.
+  Por lo tanto puede decidir inicialmente infiltrarse en el nivel 3 y derrotar al enemigo cuyo poder también es 12.
+  Después de derrotarlo, el poder de Valeria es 13.
+  El siguiente enemigo a enfrentar debe ser el del nivel 2 el del nivel 4.
+  El enemigo en el nivel 2 tiene poder 14 por lo tanto Valeria no puede derrotarlo.
+  Por lo tanto está forzada a enfrentarse al enemigo en nivel 4 y cuyo poder es 13.
+  El poder de Valeria es ahora 14 y las posibilidades son moverse al nivel 2 o al 5.
+  Similarmente, la única alternativa es moverse al nivel 2 y enfrentar al enemigo con poder 14.
+  En este punto, Valeria puede decidir derrotar al enemigo en el nivel 1 o el 5.
+  Para este caso elige primero derrotar al enemigo en el nivel 1 y luego en al enemigo en el nivel 5.
+  La secuencia en la que visito los niveles es la siguiente 3, 4, 2, 1, 5.
+  Notar que si inicialmente Valeria hubiese decidido infiltrarse en el nivel 1, hubiese
+  fallado la misión.
+
+  \begin{center}
+  \scalebox{0.8}{
+    \begin{tikzpicture}
+      \def\N{5}
+
+      \begin{scope}
+        \draw (0, 0) grid (1,\N);
+        \foreach \y in {1, ..., \N} {
+          \node[scale=0.8] at (-0.3, \y - 0.5) {\y};
+        }
+
+        \node[red, scale=0.9] at (0.5, 4.5) {\bf 15\swordred};
+        \node[red, scale=0.9] at (0.5, 3.5) {\bf 13\swordred};
+        \node[red, scale=0.9] at (0.5, 2.5) {\bf 12\swordred};
+        \node[red, scale=0.9] at (0.5, 1.5) {\bf 14\swordred};
+        \node[red, scale=0.9] at (0.5, 0.5) {\bf 11\swordred};
+
+        \node[blue, scale=0.9] at (1.5, 2.5) {\bf \swordblue12};
+      \end{scope}
+
+      \begin{scope}[shift={(4cm, 0)}]
+        \draw (0, 0) grid (1,\N);
+        \foreach \y in {1, ..., \N} {
+          \node[scale=0.8] at (-0.3, \y - 0.5) {\y};
+        }
+
+        \node[red, scale=0.9] at (0.5, 4.5) {\bf 15\swordred};
+        \node[red, scale=0.9] at (0.5, 3.5) {\bf 13\swordred};
+        \node[red, scale=0.9] at (0.5, 2.5) {};
+        \node[red, scale=0.9] at (0.5, 1.5) {\bf 14\swordred};
+        \node[red, scale=0.9] at (0.5, 0.5) {\bf 11\swordred};
+
+        \node[blue, scale=0.9] at (1.5, 3.5) {\bf \swordblue13};
+      \end{scope}
+
+      \begin{scope}[shift={(8cm, 0)}]
+        \draw (0, 0) grid (1,\N);
+        \foreach \y in {1, ..., \N} {
+          \node[scale=0.8] at (-0.3, \y - 0.5) {\y};
+        }
+
+        \node[red, scale=0.9] at (0.5, 4.5) {\bf 15\swordred};
+        \node[red, scale=0.9] at (0.5, 3.5) {};
+        \node[red, scale=0.9] at (0.5, 2.5) {};
+        \node[red, scale=0.9] at (0.5, 1.5) {\bf 14\swordred};
+        \node[red, scale=0.9] at (0.5, 0.5) {\bf 11\swordred};
+
+        \node[blue, scale=0.9] at (1.5, 1.5) {\bf \swordblue14};
+      \end{scope}
+
+      \begin{scope}[shift={(12cm, 0)}]
+        \draw (0, 0) grid (1,\N);
+        \foreach \y in {1, ..., \N} {
+          \node[scale=0.8] at (-0.3, \y - 0.5) {\y};
+        }
+
+        \node[red, scale=0.9] at (0.5, 4.5) {\bf 15\swordred};
+        \node[red, scale=0.9] at (0.5, 3.5) {};
+        \node[red, scale=0.9] at (0.5, 2.5) {};
+        \node[red, scale=0.9] at (0.5, 1.5) {};
+        \node[red, scale=0.9] at (0.5, 0.5) {\bf 11\swordred};
+
+        \node[blue, scale=0.9] at (1.5, 0.5) {\bf \swordblue15};
+      \end{scope}
+
+      \begin{scope}[shift={(16cm, 0)}]
+        \draw (0, 0) grid (1,\N);
+        \foreach \y in {1, ..., \N} {
+          \node[scale=0.8] at (-0.3, \y - 0.5) {\y};
+        }
+
+        \node[red, scale=0.9] at (0.5, 4.5) {\bf 15\swordred};
+        \node[red, scale=0.9] at (0.5, 3.5) {};
+        \node[red, scale=0.9] at (0.5, 2.5) {};
+        \node[red, scale=0.9] at (0.5, 1.5) {};
+        \node[red, scale=0.9] at (0.5, 0.5) {};
+
+        \node[blue, scale=0.9] at (1.5, 4.5) {\bf \swordblue6};
+      \end{scope}
+
+    \end{tikzpicture}
+  }
+  \end{center}
 \end{problemDescription}
 
 \begin{inputDescription}
-\lipsum[1]
+  La primera línea de la entrada contiene dos enteros $N$ y $V$ ($0 < N \leq 500$ y $0 < V \leq 10^9$)
+  correspondientes respectivamente a la cantidad de niveles en la torre y el poder inicial de Valeria.
+  A continuación siguen $N$ líneas cada una conteniendo un entero mayor que cero.
+  El entero en la $i$-ésimo línea corresponde al poder $P_i$ del enemigo en el nivel $i$.
 \end{inputDescription}
 
 \begin{outputDescription}
-\lipsum[1]
+  La salida debe contener línea con $N$ enteros entre 1 y $N$ correspondientes a un posible orden
+  en que Valeria puede visitar los niveles para derrotar a todos los enemigos.
+  En caso de haber más de un posible orden cualquiera de ellos es una respuesta válida.
+  Si no existe un orden en el que sea posible derrotar a todos los enemigos, la salida debe contener
+  una línea con la palabra \texttt{FALLIDA}.
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \subtask{20}
-  Descripción Subtarea1
-  \subtask{30}
-  Descripción Subtarea2
-  \subtask{50}
-  Descripción Subtarea3
+  \subtask{100}
+  Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
