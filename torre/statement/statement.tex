@@ -43,9 +43,9 @@
   El enemigo en el nivel 2 tiene poder 14 por lo tanto Valeria no puede derrotarlo.
   Por lo tanto está forzada a enfrentarse al enemigo en nivel 4 cuyo poder es 13.
   El poder de Valeria es ahora 14 y las posibilidades son moverse al nivel 2 (abajo) o al 5 (arriba).
-  La única alternativa es moverse al nivel 2 y enfrentar al enemigo con poder 14.
+  En este caso la única alternativa es moverse al nivel 2 y enfrentar al enemigo con poder 14.
   En este punto, Valeria puede decidir derrotar al enemigo en el nivel 1 o el 5.
-  Para este ejemplo, elige primero derrotar al enemigo en el nivel 1 y luego en al enemigo en el nivel 5.
+  Para este ejemplo, elige primero derrotar al enemigo en el nivel 1 y luego al enemigo en el nivel 5.
   La secuencia en la que Valeria visita todos los niveles es la siguiente 3, 4, 2, 1, 5.
   Notar que si inicialmente Valeria hubiese decidido infiltrarse en el nivel 1, hubiese
   fallado la misión.
@@ -139,11 +139,11 @@
   La primera línea de la entrada contiene dos enteros $N$ y $V$ ($0 < N \leq 500$ y $0 < V \leq 10^9$)
   correspondientes respectivamente a la cantidad de niveles en la torre y el poder inicial de Valeria.
   A continuación siguen $N$ líneas cada una conteniendo un entero mayor que cero.
-  El entero en la $i$-ésimo línea corresponde al poder $P_i$ del enemigo en el nivel $i$.
+  El entero en la $i$-ésima línea corresponde al poder $P_i$ del enemigo en el nivel $i$.
 \end{inputDescription}
 
 \begin{outputDescription}
-  La salida debe contener línea con $N$ enteros entre 1 y $N$ correspondientes a un posible orden
+  La salida debe contener una línea con $N$ enteros entre 1 y $N$ correspondientes a un posible orden
   en que Valeria puede visitar los niveles para derrotar a todos los enemigos.
   En caso de haber más de un posible orden cualquiera de ellos es una respuesta válida.
   Si no existe un orden en el que sea posible derrotar a todos los enemigos, la salida debe contener
@@ -152,7 +152,7 @@
 
 \begin{scoreDescription}
   \subtask{100}
-  Se probarán varios casos sin restricciones adicionales.
+  Este problema solo contiene una subtarea.
 \end{scoreDescription}
 
 \begin{sampleDescription}

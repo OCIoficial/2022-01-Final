@@ -21,18 +21,18 @@
   Dado el indiscutible impacto negativo que esto tiene en el medio ambiente, los habitantes de
   Grilland han decidido poner un alto a la dependencia al automóvil.
   Los expertos saben que la mejor forma de lograrlo es hacer que la ciudad sea más
-  \emph{caminable}.
+  caminable.
   Como primer paso, las autoridades están interesadas en saber qué puntos de la ciudad son
   actualmente los más caminables.
-  Un punto es más caminable mientras más puntos de interés sea posible acceder caminando
+  Un punto es más caminable mientras más puntos de interés sea posible \emph{acceder} caminando
   desde él.
 
   La geometría de Grilland es muy especial.
-  Sus calles forman un grilla perfecta con $M$ calles en dirección horizontal,
+  Sus calles forman un grilla perfecta con $M$ calles en dirección horizontal
   y $N$ calles en dirección vertical.
   Las calles en dirección horizontal son numeradas de norte a sur entre 1 y $M$.
   Las calles en dirección vertical son numeradas de oeste a este entre 1 y $N$.
-  Dada una calle $i$ en dirección horizontal y una calle $j$ en dirección vertical identificamos
+  Dada una calle $i$ en dirección horizontal y una calle $j$ en dirección vertical, identificamos
   con el par $(i, j)$ a la intersección entre ambas calles.
   Denominamos \emph{cuadra} al segmento de una calle contenido entre dos intersecciones consecutivas.
   La siguiente imagen muestra un ejemplo de la geometría de Grilland para $M=6$ y $N=8$, donde se
@@ -67,13 +67,15 @@
   }
   \end{center}
 
+  Solo algunas de las calles en Grilland tienen vereda.
+  Si una calle tiene vereda, esta se extiende por todas sus cuadras.
+  Una persona puede caminar libremente solo por las calles que tienen vereda.
+
   Algunas de las cuadras contienen \emph{puntos de interés}.
   Dada una intersección inicial estamos interesados en calcular el \emph{nivel de acceso} para
   esa intersección.
   El nivel de acceso corresponde a la cantidad de puntos de interés que pueden ser accedidos
   desde la intersección inicial caminando no más de $F$ cuadras.
-  Esto parece una tarea sencilla, pero hay que considerar que {\bf solo algunas de las calles en Grilland
-  tienen una vereda por la cual es posible caminar}.
 
   La siguiente imagen muestra un ejemplo donde las calles con vereda han sido marcadas de color
   {\bf\color{blue}azul}, los puntos de interés están representados con pequeños cuadrados blancos
@@ -143,8 +145,8 @@
   }
   \end{center}
 
-  Dada la descripción de la geometría de Grilland, las calles que tienen vereda, las cuadras en las que
-  están ubicados los puntos de interés y la intersección inicial, tu tarea es calcular el nivel de
+  Dadas las calles que tienen vereda, las cuadras en las que están ubicados los puntos de interés
+  y la intersección inicial, tu tarea es calcular el nivel de
   acceso para la intersección inicial.
 \end{problemDescription}
 
@@ -158,7 +160,7 @@
   Similarmente, la tercera línea contiene $N$ enteros describiendo si las calles en dirección
   vertical contienen veredas.
 
-  La siguiente línea contiene 3 enteros $X$, $Y$ y $F$.
+  La siguiente línea contiene 3 enteros $X$, $Y$ y $F$ ($1 \leq X \leq M$, $1 \leq Y \leq N$ y $1\leq F \leq 500$).
   El par $(X, Y)$ describe la intersección inicial.
   El entero $F$ describe la cantidad máxima de cuadras.
   La intersección $(X, Y)$ no necesariamente estará contenida en una calle con vereda.
