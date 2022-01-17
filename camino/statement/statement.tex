@@ -10,7 +10,7 @@
 
 \colorlet{h}{red!50!white}
 
-\title{Ejemplo}
+\title{El mejor camino}
 
 \renewcommand{\right}[4][lightgray]{
   \node[single arrow, text width=20, align=center, scale=0.4, fill=#1] at (#2, #3 + 0.5) {#4};
@@ -22,25 +22,25 @@
 
 \begin{document}
 \begin{problemDescription}
-  Aburrida en su casa Maiki acaba de inventar un nuevo juego.
+  Aburrida en su casa, Maiki acaba de inventar un nuevo juego.
   El juego se juega en una matriz de $M$ filas y $N$ columnas.
   Las filas de la matriz se enumeran de arriba a abajo entre 1 y $M$.
   Las columnas se enumeran de izquierda a derecha entre 1 y $N$.
   Identificamos con un par $(i, j)$ a la casilla en la fila $i$ y columna $j$.
 
-  Partiendo de la casilla $(1, 1)$ (esquina superior izquierda) en cada turno uno puede moverse desde
+  Partiendo de la casilla $(1, 1)$, en cada turno uno puede moverse desde
   la casilla actual a la casilla inmediatamente abajo o inmediatamente a la derecha.
   Cada vez que uno se mueve a una nueva casilla se asigna un puntaje.
   El puntaje es distinto para cada casilla y depende de si uno se mueve a la casilla
   viniendo desde la izquierda o desde arriba.
-  El objetivo del juego es llegar a la casilla $(M, N)$ (esquina inferior derecha) sumando
+  El objetivo del juego es llegar a la casilla $(M, N)$ sumando
   la mayor cantidad de puntaje.
 
   La siguiente figura muestra un ejemplo para $M = 2$ y $N= 3$.
   Las flechas representan los puntajes asociados a cada casilla.
   Notar que las casillas del borde superior tienen un puntaje asociado a llegar desde
-  arriba, no obstante estos puntajes son irrelevantes pues uno nunca puede moverse a
-  estas casillas desde arriba.
+  arriba.
+  Estos puntajes son irrelevantes pues uno nunca puede moverse a estas casillas desde arriba.
   Similarmente, las casillas del borde izquierdo tienen un puntaje asociado a llegar desde la
   izquierda a pesar de ser irrelevante.
 
@@ -76,10 +76,11 @@
 \end{problemDescription}
 
 \begin{inputDescription}
-  La primera línea de la entrada contiene dos enteros $M$ y $N$ correspondientes respectivamente
-  a la cantidad de filas y columnas en la matriz.
+  La primera línea de la entrada contiene dos enteros $M$ y $N$ ($1 \leq N \leq 500$ y $1 \leq M \leq 500$)
+  correspondientes respectivamente a la cantidad de filas y columnas en la matriz.
 
-  A continuación siguen $M$ líneas cada una conteniendo $N$ enteros mayores o iguales que cero.
+  A continuación siguen $M$ líneas cada una conteniendo $N$ enteros mayores o iguales que cero y menores
+  que $10^6$.
   El $j$-ésimo entero de la línea $i$-ésima corresponde al puntaje asociado a moverse {\bf desde arriba}
   a la casilla $(i, j)$.
 
