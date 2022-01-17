@@ -28,20 +28,75 @@
 # passed as the first argument meaning that the rest of the arguments are "shifted" in one position.
 
 [Subtask 1]
-  # Use sample data as test
+  # Manual cases
+
   sample ; copy statement/sample-1.in
-  sample ; copy statement/sample-2.in
 
-  # Manual test case
-  manual ; copy attic/manual-1.in
+  border-case ; copy attic/manual_cases/n_m_equal_1.in
+  border-case ; copy attic/manual_cases/st1_first_val.in
 
-  # Random tests
-  rand ; random.cpp 10 100
-  rand ; random.cpp 100 1000
+  # Random cases
 
+  rand ; gen_random.py 1 rand 0 1000000
+  rand ; gen_random.py 1 rand 0 1000000
+  rand ; gen_random.py 1 rand 0 1000000
+  rand ; gen_random.py 1 rand 0 1000000
+
+  rand-big ; gen_random.py 1 500 0 1000000
+  rand-big ; gen_random.py 1 500 0 1000000
+  rand-big ; gen_random.py 1 500 0 1000000
+  border-case ; gen_random.py 1 50 0 0 eq # All zero
+  border-case ; gen_random.py 1 500 1000000 1000000 eq # All max
 
 [Subtask 2]
-  # Random tests
-  rand ; random.py 10 20 30
-  rand ; random.py 20 30 40
+  # Manual cases
+  
+  sample ; copy statement/sample-2.in
+  border-case ; copy attic/manual_cases/n_m_equal_1.in
 
+  # Random cases
+
+  rand ; gen_random.py 1 500 1000000 1000000 eq
+  rand ; gen_random.py 500 1 1000000 1000000 eq
+  rand ; gen_random.py 500 500 1000000 1000000 eq
+  rand ; gen_random.py rand rand 0 0 eq
+  rand ; gen_random.py rand rand 10 10 eq
+  rand ; gen_random.py rand rand 1001 1001 eq
+
+[Subtask 3]
+  # Manual cases
+  
+  sample ; copy statement/sample-3.in
+  border-case ; copy attic/manual_cases/n_m_equal_1.in
+  border-case ; copy attic/manual_cases/greedy_st3.in
+
+  # Random cases
+
+  rand ; gen_random.py 1 500 rand rand eq
+  rand ; gen_random.py 500 1 rand rand eq
+  rand ; gen_random.py 500 500 rand rand eq
+  rand ; gen_random.py rand rand rand rand eq
+  rand ; gen_random.py rand rand rand rand eq
+  rand ; gen_random.py rand rand rand rand eq
+
+  border-case ; gen_random.py 50 50 0 0 eq # All zero
+  border-case ; gen_random.py 500 500 1000000 1000000 eq # All max
+  
+[Subtask 4]
+  # Manual cases
+  
+  sample ; copy statement/sample-4.in
+  border-case ; copy attic/manual_cases/n_m_equal_1.in
+  border-case ; copy attic/manual_cases/greedy_st4.in
+
+  # Random cases
+
+  rand ; gen_random.py 1 500 rand rand
+  rand ; gen_random.py 500 1 rand rand
+  rand ; gen_random.py 500 500 rand rand
+  rand ; gen_random.py rand rand rand rand
+  rand ; gen_random.py rand rand rand rand
+  rand ; gen_random.py rand rand rand rand
+
+  border-case ; gen_random.py 50 50 0 0 eq # All zero
+  border-case ; gen_random.py 500 500 1000000 1000000 eq # All max
