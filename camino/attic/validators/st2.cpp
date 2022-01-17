@@ -28,8 +28,9 @@ int main() {
           score
         );
       }
-      i == N ? inf.readEoln() : inf.readSpace();
+      if (i != N) inf.readSpace();
     }
+    inf.readEoln();
   }
 
   for (int i = 1; i <= M; ++i) {
@@ -43,8 +44,9 @@ int main() {
         s,
         score
       );
-      i == N ? inf.readEoln() : inf.readSpace();
+      if (i != N) inf.readSpace();
     }
+    inf.readEoln();
   }
 
   inf.readEof();
