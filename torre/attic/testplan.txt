@@ -1,4 +1,4 @@
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   rand_dense ; gen_random.py 10 10
   rand_sparse; gen_random.py 10 1000000000
   rand_dense ; gen_random.py 100 10
