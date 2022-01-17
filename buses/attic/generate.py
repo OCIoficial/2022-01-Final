@@ -27,16 +27,11 @@ import sys
 #   3: hay ambas
 #
 # 8. Puntos de interés:
-#   TODO: -3: en cada cuadra de la 1ra y última calle vertical y horizontal c/veredas
-#   TODO: -2: en cada cuadra de la 1ra y última calle vertical c/veredas
-#   TODO: -1: en cada cuadra de la 1ra y última calle horizontal c/veredas
+#   -3: en cada cuadra de la 1ra y última calle vertical y horizontal c/veredas
+#   -2: en cada cuadra de la 1ra y última calle vertical c/veredas
+#   -1: en cada cuadra de la 1ra y última calle horizontal c/veredas
 #   0: en cada cuadra
 #   >= 0: número de puntos de interés dispuestos al azar
-#
-# 9. TODO: Verificar F-1, F, F+1 distintos
-#   0: no
-#   != 0: sí
-#
 
 random.seed(str(sys.argv[1:]))
 
@@ -47,7 +42,6 @@ r = float(sys.argv[5])
 s = int(sys.argv[6])
 v = int(sys.argv[7])
 t = int(sys.argv[8])
-z = bool(int(sys.argv[9]))
 
 # Verificaciones
 
@@ -63,7 +57,7 @@ assert -3 <= t <= 1000
 xopts = {1: 1, 2: 1, 3: m, 4: m}
 yopts = {1: 1, 2: n, 3: 1, 4: n}
 x = xopts.get(s, random.randint(1, m))
-y = xopts.get(s, random.randint(1, n))
+y = yopts.get(s, random.randint(1, n))
 
 horizontal = [0] * m
 for i in range(m):
@@ -80,6 +74,16 @@ for i in range(n):
         vertical[i] = int(random.random() < r)
 
 pdi = []
+if -t & 1:
+    calles = [idx for idx, val in enumerate(horizontal) if val == 1]
+    if calles:
+        for j in range(n - 1):
+            pdi.extend(((calles[0] + 1, j + 1, 0), (calles[-1] + 1, j + 1, 0)))
+if -t & 2:
+    calles = [idx for idx, val in enumerate(vertical) if val == 1]
+    if calles:
+        for i in range(m - 1):
+            pdi.extend(((i + 1, calles[0] + 1, 1), (i + 1, calles[-1] + 1, 1)))
 if t == 0:
     for i in range(m):
         for j in range(n - 1):
