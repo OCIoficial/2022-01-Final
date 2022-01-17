@@ -27,7 +27,7 @@
 # The generator should use this extra argument to generate the random seed. The extra argument is
 # passed as the first argument meaning that the rest of the arguments are "shifted" in one position.
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Manual cases
 
   sample ; copy statement/sample-1.in
@@ -48,9 +48,9 @@
   border-case ; gen_random.py 1 50 0 0 eq # All zero
   border-case ; gen_random.py 1 500 1000000 1000000 eq # All max
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   # Manual cases
-  
+
   sample ; copy statement/sample-2.in
   border-case ; copy attic/manual_cases/n_m_equal_1.in
 
@@ -63,9 +63,9 @@
   rand ; gen_random.py rand rand 10 10 eq
   rand ; gen_random.py rand rand 1001 1001 eq
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   # Manual cases
-  
+
   sample ; copy statement/sample-3.in
   border-case ; copy attic/manual_cases/n_m_equal_1.in
   border-case ; copy attic/manual_cases/greedy_st3.in
@@ -81,10 +81,10 @@
 
   border-case ; gen_random.py 50 50 0 0 eq # All zero
   border-case ; gen_random.py 500 500 1000000 1000000 eq # All max
-  
-[Subtask 4]
+
+[Subtask 4 - validators/st4.cpp]
   # Manual cases
-  
+
   sample ; copy statement/sample-4.in
   border-case ; copy attic/manual_cases/n_m_equal_1.in
   border-case ; copy attic/manual_cases/greedy_st4.in
