@@ -17,8 +17,9 @@ int main() {
   for (int i = 1; i <= M; ++i) {
     for (int j = 1; j <= N; ++j) {
       scores[i][j] = inf.readInt(0, maxScore, "Puntaje desde arriba");
-      i == N ? inf.readEoln() : inf.readSpace();
+      if (i != N) inf.readSpace();
     }
+    inf.readEoln();
   }
 
   for (int i = 1; i <= M; ++i) {
@@ -32,8 +33,9 @@ int main() {
         s,
         scores[i][j]
       );
-      i == N ? inf.readEoln() : inf.readSpace();
+      if (i != N) inf.readSpace();
     }
+    inf.readEoln();
   }
 
   inf.readEof();

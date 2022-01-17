@@ -12,13 +12,15 @@ int main() {
 
   for (int i = 1; i <= M; ++i) {
     int c = inf.readInt(0, 1, "Fila tiene vereda");
-    i == M ? inf.readEoln() : inf.readSpace();
+    if (i != M) inf.readSpace();
   }
+  inf.readEoln();
 
   for (int i = 1; i <= N; ++i) {
     int c = inf.readInt(0, 1, "Columna tiene vereda");
-    i == N ? inf.readEoln() : inf.readSpace();
+    if (i != N) inf.readSpace();
   }
+  inf.readEoln();
 
   int X = inf.readInt(1, M, "Fila inicial");
   inf.readSpace();
