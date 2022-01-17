@@ -20,11 +20,9 @@ bool simulate(int i) {
 
   while (left >= 0 || right < N) {
     if (left >= 0 && P[left] <= v) {
-      sol.push_back(left);
-      --left;
+      sol.push_back(left--);
     } else if (right < N && P[right] <= v) {
-      sol.push_back(right);
-      ++right;
+      sol.push_back(right++);
     } else {
       return false;
     }
