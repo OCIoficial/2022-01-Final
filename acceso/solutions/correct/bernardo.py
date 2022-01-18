@@ -1,3 +1,4 @@
+from collections import deque
 M, N = map(int, input().split(' '))
 sw_M = list(map(int, input().split(' ')))
 sw_N = list(map(int, input().split(' ')))
@@ -11,9 +12,10 @@ for e in range(E):
 	iedges.append((a,b,c))
 
 dist = {(X-1, Y-1): 0}
-q = [(X-1,Y-1)]
+q = deque()
+q.append((X-1,Y-1))
 while len(q):
-	i, j = q.pop()
+	i, j = q.popleft()
 	vdirs = []
 	if sw_M[i]:
 		vdirs.extend([(0, 1), (0,-1)])
