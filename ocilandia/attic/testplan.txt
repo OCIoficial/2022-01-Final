@@ -32,16 +32,37 @@
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
 
-  # Manual test case
-  manual ; copy attic/manual-1.in
+  # Random tests      N min_fila max_fila min_t max_t
+  rand ; generate.py  2   1       10        1     10
+  rand ; generate.py  3   1       10        1     10
+  rand ; generate.py  5   1       10        1     10
+  rand ; generate.py  10   2       100        1     100
+  rand ; generate.py  10   200     100      1     100
+  rand ; generate.py  10   200     100      1     100
+  rand ; generate.py  20   2     100      1     100
+  rand ; generate.py  30   2     100      1     100
+  rand ; generate.py  40   2     100      1     100
+  rand ; generate.py  50   2     100      1     100
+  rand ; generate.py  60   2     100      1     100
+  rand ; generate.py  70   2     100      1     100
+  rand ; generate.py  80   2     100      1     100
+  rand ; generate.py  90   2     100      1     100
+  rand ; generate.py  100  21     1000      1     100
 
-  # Random tests
-  rand ; random.cpp 10 100
-  rand ; random.cpp 100 1000
-
-
-[Subtask 2]
-  # Random tests
-  rand ; random.py 10 20 30
-  rand ; random.py 20 30 40
-
+  # Same tests but with slightly different params for rand
+  rand ; generate.py  2   5       10        1     10
+  rand ; generate.py  3   5       10        1     10
+  rand ; generate.py  5   5       10        1     10
+  rand ; generate.py  10   1       100        1     100
+  rand ; generate.py  10   100     1000      100     1000
+  rand ; generate.py  10   100     1000      100     1000
+  rand ; generate.py  20   1     1000      1     1000
+  rand ; generate.py  30   1     1000      1     1000
+  rand ; generate.py  40   1     1000      1     1000
+  rand ; generate.py  50   1     1000      1     1000
+  rand ; generate.py  60   1     1000      1     1000
+  rand ; generate.py  70   1     1000      1     1000
+  rand ; generate.py  80   1     1000      1     1000
+  rand ; generate.py  90   1     1000      1     1000
+  rand ; generate.py  100   1     1000      1     1000
+  
