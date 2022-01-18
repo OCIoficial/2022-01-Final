@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <map>
 #include <queue>
+#include <set>
 #include <tuple>
 #include <vector>
 using namespace std;
@@ -35,22 +36,30 @@ struct Grilland {
   int bfs(int i, int j, int F) {
     queue<tuple<int, int>> q;
     vector<vector<int>> dist(M, vector<int>(N, -1));
+    set<tuple<pii, pii>> visited_edges;
     dist[i][j] = 0;
     q.push({i, j});
 
+    int r = 0;
     int sum = 0;
     while (!q.empty()) {
       tie(i, j) = q.front(), q.pop();
+      r++;
       neighbors(i, j, [&](int vi, int vj, int p) {
-        if (dist[vi][vj] == -1) {
-          int d = dist[i][j] + 1;
-
-          q.push({vi, vj});
-          dist[vi][vj] = d;
-
+        int d = dist[i][j] + 1;
+        pii a = min(pii{i, j}, {vi, vj});
+        pii b = max(pii{i, j}, {vi, vj});
+        if (visited_edges.count({a, b}) == 0) {
           if (d <= F) {
             sum += p;
           }
+          visited_edges.insert({a, b});
+        }
+
+        if (dist[vi][vj] == -1) {
+
+          q.push({vi, vj});
+          dist[vi][vj] = d;
         }
       });
     }
