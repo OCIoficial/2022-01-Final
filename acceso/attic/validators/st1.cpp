@@ -26,7 +26,7 @@ int main() {
   inf.readSpace();
   int Y = inf.readInt(1, N, "Columna inicial");
   inf.readSpace();
-  int F = inf.readInt(1, M + N + max(M, N) - 3, "Distancia máxima");
+  int F = inf.readInt(1, 500, "Distancia máxima");
   inf.readEoln();
 
   int E = inf.readInt(1, 1000, "Puntos de interés");

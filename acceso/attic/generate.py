@@ -47,7 +47,7 @@ t = int(sys.argv[8])
 
 assert 0 < min(m, n)
 assert max(m, n) <= 100
-assert 1 <= f <= max(m, n) + m + n - 3
+assert 1 <= f <= 500
 assert 0 <= r <= 1
 assert 0 <= v <= 3
 assert -3 <= t <= 1000
