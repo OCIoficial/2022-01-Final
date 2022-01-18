@@ -42,13 +42,15 @@ struct Grilland {
     while (!q.empty()) {
       tie(i, j) = q.front(), q.pop();
       neighbors(i, j, [&](int vi, int vj, int p) {
-        int d = dist[i][j] + 1;
         if (dist[vi][vj] == -1) {
+          int d = dist[i][j] + 1;
+
           q.push({vi, vj});
-          if (d <= F && p > 0) {
+          dist[vi][vj] = d;
+
+          if (d <= F) {
             sum += p;
           }
-          dist[vi][vj] = d;
         }
       });
     }
