@@ -32,6 +32,8 @@ for iedge in iedges:
 	a, b, c = iedge
 	a, b = a-1, b-1
 	if (a,b) not in dist or (a+c, b+1-c) not in dist: continue
+	if c == 0 and not sw_M[a]: continue
+	if c == 1 and not sw_N[b]: continue
 	ans += max(dist[(a,b)], dist[(a+c,b+1-c)]) <= F
 print(ans)
 
