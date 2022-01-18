@@ -37,8 +37,8 @@
   rand ; generate.py  3   1       10        1     10
   rand ; generate.py  5   1       10        1     10
   rand ; generate.py  10   2       100        1     100
-  rand ; generate.py  10   200     100      1     100
-  rand ; generate.py  10   200     100      1     100
+  rand ; generate.py  10   50     100      1     100
+  rand ; generate.py  10   50     100      1     100
   rand ; generate.py  20   2     100      1     100
   rand ; generate.py  30   2     100      1     100
   rand ; generate.py  40   2     100      1     100
