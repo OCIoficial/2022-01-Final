@@ -57,7 +57,6 @@ struct Grilland {
         }
 
         if (dist[vi][vj] == -1) {
-
           q.push({vi, vj});
           dist[vi][vj] = d;
         }
