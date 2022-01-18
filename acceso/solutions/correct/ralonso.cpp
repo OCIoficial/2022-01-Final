@@ -64,7 +64,7 @@ int main() {
     
     while (e--) {
         cin >> a >> b >> c;
-        if (city[2 * a - 1 - c][2 * b - 2 + c] == reachable) {
+        if (city[2 * a - 1 + c][2 * b - c] == reachable) {
             r++;
         }
     }
