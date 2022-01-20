@@ -27,10 +27,9 @@
 # The generator should use this extra argument to generate the random seed. The extra argument is
 # passed as the first argument meaning that the rest of the arguments are "shifted" in one position.
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Use sample data as test
   sample ; copy statement/sample-1.in
-  sample ; copy statement/sample-2.in
 
   # Random tests      N min_fila max_fila min_t max_t
   rand ; generate.py  2   1       10        1     10
@@ -65,4 +64,4 @@
   rand ; generate.py  80   1     1000      1     1000
   rand ; generate.py  90   1     1000      1     1000
   rand ; generate.py  100   1     1000      1     1000
-  
+

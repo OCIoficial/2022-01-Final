@@ -36,7 +36,6 @@ for n_p in personas_en_fila:
         tiempos.append(random.randint(min_tiempo, max_tiempo))
     tiempo_por_fila.append(tiempos)
 
-print(tiempo_por_fila)
 
 def validate_times(ts):
     t_times = []
@@ -45,10 +44,10 @@ def validate_times(ts):
         assert t_sum not in t_times
         t_times.append(ts)
 
+
 validate_times(tiempo_por_fila)
-    
+
 print(N)
-for i in range(N):
-    print(personas_en_fila[i])
+print(*personas_en_fila, sep=' ')
 for i in range(N):
     print(*tiempo_por_fila[i], sep=' ')
