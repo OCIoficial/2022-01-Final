@@ -19,7 +19,7 @@ int main(){
     for(int j=0; j<m; j++)
       cin >> cost[i][j];
   vector <vector <int>> dp(n, vector<int>(m, -INF));
-  dp[0][0] = 0;
+  dp[0][0] = 0; cost[0][0] = 0;
   for(int i=0; i<n; i++){
     for(int j=0; j<m; j++){
       if(i) dp[i][j] = max(dp[i][j], dp[i-1][j]);
