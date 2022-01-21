@@ -1,9 +1,9 @@
 {
     "tasks": [
-        "filas",
-        "torre",
-        "buses",
-        "camino"
+        "acceso",
+        "camino",
+        "ocilandia",
+        "torre"
     ],
     "phase": "Final"
 }

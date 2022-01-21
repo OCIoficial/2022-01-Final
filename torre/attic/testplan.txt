@@ -1,9 +1,13 @@
 [Subtask 1 - validators/st1.cpp]
   rand_dense ; gen_random.py 10 10
-  rand_sparse; gen_random.py 10 1000000000
+  rand_dense ; gen_random.py 50 10
   rand_dense ; gen_random.py 100 10
+  rand_dense ; gen_random.py 200 10
+  rand_dense ; gen_random.py 500 10
+  rand_sparse; gen_random.py 10 1000000000
+  rand_sparse; gen_random.py 50 1000000000
   rand_sparse ; gen_random.py 100 100000000
-  rand_dense ; gen_random.py 500 20
+  rand_sparse ; gen_random.py 200 100000000
   rand_sparse ; gen_random.py 500 100000000
 
 
